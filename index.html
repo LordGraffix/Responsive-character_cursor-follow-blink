@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Responsive Character</title>
+    <script src="https://unpkg.com/@rive-app/canvas@2.0.0"></script>
+    <style>
+      html, body { margin: 0; overflow: hidden; height: 100%; }
+      canvas { width: 100%; height: 100%; display: block; }
+    </style>
+  </head>
+  <body>
+    <canvas id="riveCanvas"></canvas>
+    <script>
+      const canvas = document.getElementById("riveCanvas");
+      const rive = new Rive({
+        src: "char_fix.riv",
+        canvas: canvas,
+        autoplay: true,
+        stateMachines: ["State Machine 1"], // Update to your Rive state machine name
+        onLoad: () => {
+          const sm = rive.stateMachineInputs("State Machine 1"); // Adjust name if different
+          // You can map cursor input here if needed
+        }
+      });
+    </script>
+  </body>
+</html>
